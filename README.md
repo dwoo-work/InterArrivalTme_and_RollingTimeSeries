@@ -82,12 +82,36 @@ sales['year'] = sales['ORDERDATE'].dt.year
 ```
 
 Lines 19:  
-Create a new column that shows the month and the year
+Create a new column that shows the month and the year.
 ```python   
 sales['month_year'] = sales['ORDERDATE'].dt.strftime('%B-%Y')
 ```
 
+Lines 21-25:  
+Identify the last purchase date for each customer.
+```python   
+sales['date'] = sales['ORDERDATE'].dt.strftime('%Y-%m-%d')
+sales['date'] = pd.to_datetime(sales['date'])
+max_date = sales['date'].max()
+customer_last = sales.groupby('CUSTOMERNAME').agg(last_purchase_date= ('date','max')).reset_index()
+customer_last['recency'] = max_date - customer_last['last_purchase_date']
+```
 
+Lines 27-30:  
+Find the MA-7 and MA-14 for the sales data (only populate 2003 - 2005 data), and show in line chart.
+```python   
+sales_daily = sales.groupby('date').agg(total_sales=('QUANTITYORDERED','sum'))
+sales_daily['moving_7'] = sales_daily.rolling(window = 7).mean()
+sales_daily['moving_14'] = sales_daily.total_sales.rolling(window = 14).mean()
+sales_daily['2003':'2005'].plot()
+```
+
+Lines 32-33:  
+Resample daily sales data into weekly sales data, and show in line chart.
+```python   
+sales_weekly = sales_daily.total_sales.resample('W').sum()
+sales_weekly.plot()
+```
 
 ## Credit
 
