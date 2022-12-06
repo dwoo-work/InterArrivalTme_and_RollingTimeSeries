@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Read the CSV file.
 
-sales = pd.read_csv('sales_data_sample_utf8.csv')
+sales = pd.read_csv('https://raw.githubusercontent.com/dwoo-work/RecencyAnalysis/main/src/sales_data_sample_utf8.csv')
 
 # Remove duplicates and #N/A! from the dataframe.
 
