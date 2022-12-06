@@ -24,15 +24,6 @@ You can download the sales_data_sample_utf8.csv file from the source folder, whi
 
 Ensure that the file is in CSV UTF-8 format, to avoid UnicodeDecodeError later on.
 
-## The Flow
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus.
-
-
 ## Code Explanation
 
 Lines 1-2:  
