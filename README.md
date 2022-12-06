@@ -1,8 +1,8 @@
-# Inter Arrival Time and Rolling Time Series
+# Recency Analysis and Time Series Analysis
 
-This will demonstrate to you how to perform perform inter arrival time analysis, as well as create charts using rolling time series.
+For this project, it will demonstrate to you how to perform recency analysis (using inter-arrival time), as well as perform time series analysis (using rolling time series)
 
-This is important, for different supply chain purposes, such as forecasting, performing stock allocation, and visualising sales trend.
+This is important for different supply chain purposes, such as forecasting, performing stock allocation, and visualising sales trend.
 
 ## Installation
 
