@@ -1,6 +1,6 @@
-# Recency Analysis and Time Series Analysis
+# Recency Analysis
 
-For this project, it will demonstrate to you how to perform recency analysis (using inter-arrival time), as well as perform time series analysis (using rolling time series)
+For this project, it will demonstrate to you on how to perform recency analysis, using the inter-arrival time. On top of that, we will plot charts using the moving average (MA).
 
 This is important for different supply chain purposes, such as forecasting, performing stock allocation, and visualising sales trend.
 
