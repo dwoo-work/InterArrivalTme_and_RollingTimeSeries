@@ -9,18 +9,12 @@ sales = sales.drop_duplicates()
 sales = sales.dropna(subset=['SALES', 'ORDERDATE'],how='any')
 sales.info()
 
-# Change ORDERDATE Dtype from object to datetime.
-
 sales['ORDERDATE'] = pd.to_datetime(sales['ORDERDATE'])
-
-# Create new columns within the dataframe.
 
 sales['week'] = sales['ORDERDATE'].dt.week
 sales['dayofweek'] = sales['ORDERDATE'].dt.dayofweek
 sales['month'] = sales['ORDERDATE'].dt.month
 sales['year'] = sales['ORDERDATE'].dt.year
-
-# Create a new column that shows the month and the year
 
 sales['month_year'] = sales['ORDERDATE'].dt.strftime('%B-%Y')
 

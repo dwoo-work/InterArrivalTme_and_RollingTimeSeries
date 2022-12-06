@@ -66,6 +66,27 @@ sales = sales.dropna(subset=['SALES', 'ORDERDATE'],how='any')
 sales.info()
 ```
 
+Lines 12:  
+Change ORDERDATE Dtype from object to datetime.
+```python   
+sales['ORDERDATE'] = pd.to_datetime(sales['ORDERDATE'])
+```
+
+Lines 14-17:  
+Create new columns within the dataframe.
+```python   
+sales['week'] = sales['ORDERDATE'].dt.week
+sales['dayofweek'] = sales['ORDERDATE'].dt.dayofweek
+sales['month'] = sales['ORDERDATE'].dt.month
+sales['year'] = sales['ORDERDATE'].dt.year
+```
+
+Lines 19:  
+Create a new column that shows the month and the year
+```python   
+sales['month_year'] = sales['ORDERDATE'].dt.strftime('%B-%Y')
+```
+
 
 
 ## Credit
