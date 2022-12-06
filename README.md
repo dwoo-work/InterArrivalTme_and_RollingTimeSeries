@@ -35,11 +35,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus
 
 ## Code Explanation
 
-Lines 1-3:  
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus.
+Lines 1-2:  
+To import required libraries like Pandas and Matplotlib.
 ```python   
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis tellus.
+import pandas as pd
+import matplotlib.pyplot as plt
 ```
+
+Lines 4:  
+To import specific functions from Datetime.
+```python   
+from datetime import datetime
+```
+
+Lines 6:  
+Read the CSV file.
+```python   
+sales = pd.read_csv('https://raw.githubusercontent.com/dwoo-work/RecencyAnalysis/main/src/sales_data_sample_utf8.csv')
+```
+
+Lines 8-10:  
+Remove duplicates and #N/A! from the dataframe.
+
+For data cleaning, dropping all rows that contain any invalid value is not ideal. The data set has shrunk from 2,823 to 147, which affects the validity of the data.
+
+Therefore, an improved methods would be to just drop rows that contain invalid value at specific columns that are related to later's analysis, such as SALES and ORDERDATE
+```python   
+sales = sales.drop_duplicates()
+sales = sales.dropna(subset=['SALES', 'ORDERDATE'],how='any')
+sales.info()
+```
+
+
 
 ## Credit
 

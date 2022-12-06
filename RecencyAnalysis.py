@@ -1,21 +1,13 @@
-# To import required libraries like Pandas and Matplotlib.
-
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# To import specific functions from Datetime.
-
 from datetime import datetime
-
-# Read the CSV file.
 
 sales = pd.read_csv('https://raw.githubusercontent.com/dwoo-work/RecencyAnalysis/main/src/sales_data_sample_utf8.csv')
 
-# Remove duplicates and #N/A! from the dataframe.
-
 sales = sales.drop_duplicates()
 sales = sales.dropna(subset=['SALES', 'ORDERDATE'],how='any')
-sales.info() # For data cleaning, dropping all rows that contain any invalid value is not ideal. The data set has shrunk from 2,823 to 147, which affects the validity of the data. Therefore, an improved methods would be to just drop rows that contain invalid value at specific columns that are related to later's analysis, such as SALES and ORDERDATE
+sales.info()
 
 # Change ORDERDATE Dtype from object to datetime.
 
